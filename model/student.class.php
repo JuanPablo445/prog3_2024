@@ -81,18 +81,76 @@ class Student {
     }
     return false;
   }
-
-    public function getAllStudents() {
+  public function getAllStudents() {
     
-    }
+  }
 
-    //Geeter y Seeter
-        public function getIdStudent () {
-            return $this -> idStudent;
-        }
-        public function setIdStudent ($idStudent){
-            $this ->idStudent=$idStudent;
-        }
+  //Geeter y Seeter
+      public function getIdStudent () {
+          return $this -> idStudent;
+      }
+      public function setIdStudent ($idStudent){
+          $this ->idStudent=$idStudent;
+      }
+
+      public function getdni () {
+          return $this -> dni;
+      }
+      public function setdni ($dni){
+          $this ->dni=$dni;
+      }
+
+      public function getbirthdate () {
+          return $this -> birthdate;
+      }
+      public function setbirthdate ($birthdate){
+          $this ->birthdate=$birthdate;
+      }
+      
+      public function getname () {
+          return $this -> name;
+      }
+      public function setname ($name){
+          $this ->name=$name;
+      }
+
+      public function getsurname () {
+          return $this -> surname;
+      }
+      public function setsurname ($surname){
+          $this ->surname=$surname;
+      }
+
+      public function getemail () {
+          return $this -> email;
+      }
+      public function setemail ($email){
+          $this ->email=$email;
+      }
+
+      public function getpassword () {
+          return $this -> password;
+      }
+      public function setpassword ($password){
+          $this ->password=$password;
+      }
+
+      public function getaddress () {
+          return $this -> address;
+      }
+      public function setaddress ($address){
+          $this ->address=$address;
+      }
+
+      public function getschool () {
+          return $this -> school;
+      }
+      public function setschool ($school){
+          $this ->school=$School;
+      }
+
+      
 }
 
 ?>
+}
