@@ -3,7 +3,7 @@ include ("Model/student.class.php");
 $id=$_REQUEST["idStudent"];
 
 $student= new Student(); //Creamos el objeto!!!!!!!
-$student->setStudent($id);
+$student->setIdStudent($id);
 $student->getStudent();
 ?>
 <!DOCTYPE html>

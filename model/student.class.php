@@ -14,19 +14,6 @@ class Student {
     private $school=null;
     private $conexion=null;
 
-    public function __construct($dni, $surname, $name, $birthdate, $phone, $address, $email, $password, $school){
-        $this->dni=$dni;
-        $this->surname=$surname;
-        $this->name=$name;
-        $this->birtdate=$birthdate;
-        $this->phone=$phone;
-        $this->address=$address;
-        $this->email=$email;
-        $this->password=$password;
-        $this->school=$school;
-
-    }
-
     public function addStudent() {
      //crear la consulta
      $sql="INSERT INTO students (idStudent, dni, surname, name, birthdate, phone, address, email, password, school) VALUES (".$this->dni.",'".$this->surname."','".$this->name."','".$this->birthdate."','".$this->phone."', '".$this-> address."','".$this->email."','".$this->password."',".$this->school." )";
@@ -82,9 +69,17 @@ class Student {
     return false;
   }
   public function getAllStudents() {
-    
-  }
-
+    $sql="SELECT * FROM students";
+    $this->conexion=new Database();
+    $result= $this->conexion->query($sql);
+    $allStudent=null;
+    if($result){
+    while($row=$result->fetch_assoc()){
+        $allStudents[]=$row;
+         }
+        }
+        return $allStudents;
+    }
   //Geeter y Seeter
       public function getIdStudent () {
           return $this -> idStudent;
