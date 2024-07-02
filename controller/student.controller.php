@@ -24,16 +24,13 @@
        $student->setPhone($_REQUEST["phone"]);
        $student->setIdSchool($_REQUEST["school"]);
        $student->setPassword($_REQUEST["password"]);
-
-
-
-
-
+       $student->editStudent ();
 
        
     }else if($operation=="delete"){
-
+        $student->setIdStudent ($_REQUEST["idStudent"]);
+        $result=$student->deleteStudent();
+        echo $result;
     }
-    
     
     ?>

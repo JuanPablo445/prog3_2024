@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Student</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
 </head>
 <body>
    <h1>Panel de Estudiantes</h1>
@@ -35,7 +37,8 @@
                         print"<td>".$data["phone"]."</td>";
                         print"<td> colocar los 2 botones</td>";
                         print "<td> <button type='button' name='editar' value='Editar' onclick=\"window.location.href=formEditStudent.php?idStudent=".$data["idStudent"]."';\" /> ";
-                        print " <button type='button' name='eliminar' value='Eliminar' onclick=''/> </td";
+                        print " <button type='button' name='eliminar' value='Eliminar' onclick='askDeleteStudent(".$data["idStudent"].");'/> </td";
+                       
                         print "</tr>";
                     }
                 }else{
@@ -45,4 +48,8 @@
         </tbody>
    </table>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+<script src="js/funciones.js"></script>
+
 </html>
