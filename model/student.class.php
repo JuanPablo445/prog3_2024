@@ -51,13 +51,13 @@ class Student {
    
         $this->conexion=new Database();
        $result= $this->conexion->query($sql);
-       $this->conexion->close();
+       $this->conexion->closeDB();
        if($result){
         if($row=$result->fetch_assoc()){
             $this->dni=$row["dni"];
             $this->name=$row["name"];
             $this->surname=$row["surname"];
-            $this->birthdate=$row["birtdate"];
+            $this->birthdate=$row["birthdate"];
             $this->phone=$row["phone"];
             $this->address=$row["address"];
             $this->email=$row["email"];
@@ -143,7 +143,12 @@ class Student {
       public function setschool ($school){
           $this ->school=$School;
       }
-
+      public function getphone() {
+        return $this->phone;
+    }
+    public function setphone ($phone){
+        $this->phone=$phone;
+    }
       
 }
 

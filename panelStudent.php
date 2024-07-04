@@ -27,17 +27,16 @@
                 $student= new Student();
                 $allStudent= $student->getAllStudents();
                 if($allStudent){
-                    foreach($allStudents as $data){
+                    foreach($allStudent as $data){
                         print "<tr>";
                         print"<td>".$data["idStudent"]."</td>";
-                        print"<td>".$data["Surname"]."</td>";
+                        print"<td>".$data["surname"]."</td>";
                         print"<td>".$data["name"]."</td>";
                         print"<td>".$data["dni"]."</td>";
                         print"<td>".$data["birthdate"]."</td>";
                         print"<td>".$data["phone"]."</td>";
-                        print"<td> colocar los 2 botones</td>";
-                        print "<td> <button type='button' name='editar' value='Editar' onclick=\"window.location.href=formEditStudent.php?idStudent=".$data["idStudent"]."';\" /> ";
-                        print " <button type='button' name='eliminar' value='Eliminar' onclick='askDeleteStudent(".$data["idStudent"].");'/> </td";
+                        print "<td> <input type='button' name='editar' value='Editar' onclick=\"window.location.href='formEditStudent.php?idStudent=".$data["idStudent"]."';\" /> ";
+                        print " <input type='button' name='eliminar' value='Eliminar' onclick='askDeleteStudent(".$data["idStudent"].");'/> </td";
                        
                         print "</tr>";
                     }
