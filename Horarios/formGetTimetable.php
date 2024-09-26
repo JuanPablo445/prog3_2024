@@ -114,6 +114,90 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<p>No hay horarios disponibles para esta selección.</p>";
     }
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+    $curso = $_POST['curso'];
+    $division = $_POST['division'];
+    $turno = $_POST['turno'];
+
+    if ($curso == 'Segundo' && $division == '|' && $turno == 'Tarde') {
+    
+        header('Location: SegundoPrimera.php');
+        exit();
+    } else {
+        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+    $curso = $_POST['curso'];
+    $division = $_POST['division'];
+    $turno = $_POST['turno'];
+
+    if ($curso == 'Segundo' && $division == '||' && $turno == 'Mañana') {
+    
+        header('Location: SegundoSegunda.php');
+        exit();
+    } else {
+        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+    $curso = $_POST['curso'];
+    $division = $_POST['division'];
+    $turno = $_POST['turno'];
+
+    if ($curso == 'Segundo' && $division == '|||' && $turno == 'Mañana') {
+    
+        header('Location: SegundoTercera.php');
+        exit();
+    } else {
+        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+    $curso = $_POST['curso'];
+    $division = $_POST['division'];
+    $turno = $_POST['turno'];
+
+    if ($curso == 'Tercero' && $division == '|' && $turno == 'Mañana') {
+    
+        header('Location: TerceroPrimera.php');
+        exit();
+    } else {
+        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+    $curso = $_POST['curso'];
+    $division = $_POST['division'];
+    $turno = $_POST['turno'];
+
+    if ($curso == 'Tercero' && $division == '||' && $turno == 'Mañana') {
+    
+        header('Location: TerceroSegunda.php');
+        exit();
+    } else {
+        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+    $curso = $_POST['curso'];
+    $division = $_POST['division'];
+    $turno = $_POST['turno'];
+
+    if ($curso == 'Tercero' && $division == '|||' && $turno == 'Mañana') {
+    
+        header('Location: TerceroTercera.php');
+        exit();
+    } else {
+        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    }
+}
 ?>
 </body>
 </html>

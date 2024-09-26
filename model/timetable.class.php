@@ -17,7 +17,7 @@ include ("database.class.php");
             return $result;
         }
     }
-    public function getTimetable() {
+     function getTimetable() {
         $sql="SELECT * FROM students WHERE idStudent=".$this->idStudent;
    
         $this->conexion=new Database();

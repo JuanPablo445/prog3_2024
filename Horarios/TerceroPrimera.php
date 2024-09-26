@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario de Segundo</title>
+    <title>Horario de Tercero Primera</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,7 @@
 </head>
 <body>
 
-<h2>Horario de Segundo - Lunes a Viernes</h2>
+<h2>Horario de Tercero Primera - Lunes a Viernes</h2>
 
 <table>
     <thead>
