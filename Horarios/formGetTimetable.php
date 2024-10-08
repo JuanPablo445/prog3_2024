@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horarios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
+</head>
+<body>
+<style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
         }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            margin-top: 10px;
-            display: block;
-        }
-        select, button {
-            width: 100%;
+        th, td {
             padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
         }
         button {
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
+            border: none;
             cursor: pointer;
         }
         button:hover {
@@ -40,164 +37,86 @@
 </head>
 <body>
 
-<form method="POST" action="">
-    <h2>Selecciona tu horario</h2>
+    <h1 style="text-align:center;">Seleccionar Curso</h1>
 
-    <label for="curso">Curso:</label>
-    <select id="curso" name="curso">
-        <option value="primero">Primero</option>
-        <option value="segundo">Segundo</option>
-        <option value="tercero">Tercero</option>
-        <option value="cuarto">Cuarto</option>
-        <option value="quinto">Quinto</option>
-        <option value="sexto">Sexto</option>
-        <option value="septimo">Septimo</option>
-    </select>
+    <table>
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>División</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select id="curso">
+                        <option value="1º Año">1º Año</option>
+                        <option value="2º Año">2º Año</option>
+                        <option value="3º Año">3º Año</option>
+                        <option value="4º Año">4º Año</option>
+                        <option value="5º Año">5º Año</option>
+                        <option value="6º Año">6º Año</option>
+                        <option value="7º Año">7º Año</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="division">
+                        <option value="Primera">Primera</option>
+                        <option value="Segunda">Segunda</option>
+                        <option value="Tercera">Tercera</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="turno">
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Noche">Noche</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-    <label for="division">División:</label>
-    <select id="division" name="division">
-        <option value="|">|</option>
-        <option value="||">||</option>
-        <option value="|||">|||</option>
-    </select>
+    <div style="text-align:center; margin-top: 20px;">
+        <button type="button" onclick="buscar()">Buscar</button>
+    </div>
 
-    <label for="turno">Turno:</label>
-    <select id="turno" name="turno">
-        <option value="mañana">Mañana</option>
-        <option value="tarde">Tarde</option>
-        <option value="noche">Noche</option>
-    </select>
+    <script>
+        function buscar() {
+           
+            var curso = document.getElementById("curso").value;
+            var division = document.getElementById("division").value;
+            var turno = document.getElementById("turno").value;
 
-    <button type="submit" name="buscar">Buscar</button>
-</form>
+          
+            alert("Buscando curso: " + curso + ", División: " + division + ", Turno: " + turno);
+
+        }
+    </script>
+
+</body
+<?php
+    if (!isset($_REQUEST["buscar"])){
+?>
 
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'primero' && $division == '|' && $turno == 'mañana') {
-    
-        header('Location: PrimeroPrimera.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
+    } else{
+        include("timetable.class.php");
+        $timetable= new timetable();
+        $alltimetable= $timetable->getAlltimetable();
+        if($alltimetable){
+            foreach($alltimetable as $data){
+                print "<tr>";
+                print"<td>".$data["Curso"]."</td>";
+                print"<td>".$data["Division"]."</td>";
+                print"<td>".$data["Turno"]."</td>";
+                print "<td> <input type='button' name='buscar' value='Buscar' onclick=\"window.location.href='formEditStudent.php?idStudent=".$data["idStudent"]."';\" /> ";
+            }
+        }else{
+            print"No existe";
+        }       
     }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'primero' && $division == '||' && $turno == 'tarde') {
-    
-        header('Location: PrimeroSegunda.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'primero' && $division == '|||' && $turno == 'mañana') {
-    
-        header('Location: PrimeroTercera.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'Segundo' && $division == '|' && $turno == 'Tarde') {
-    
-        header('Location: SegundoPrimera.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'Segundo' && $division == '||' && $turno == 'Mañana') {
-    
-        header('Location: SegundoSegunda.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'Segundo' && $division == '|||' && $turno == 'Mañana') {
-    
-        header('Location: SegundoTercera.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'Tercero' && $division == '|' && $turno == 'Mañana') {
-    
-        header('Location: TerceroPrimera.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'Tercero' && $division == '||' && $turno == 'Mañana') {
-    
-        header('Location: TerceroSegunda.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-    $curso = $_POST['curso'];
-    $division = $_POST['division'];
-    $turno = $_POST['turno'];
-
-    if ($curso == 'Tercero' && $division == '|||' && $turno == 'Mañana') {
-    
-        header('Location: TerceroTercera.php');
-        exit();
-    } else {
-        echo "<p>No hay horarios disponibles para esta selección.</p>";
-    }
-}
 ?>
 </body>
 </html>

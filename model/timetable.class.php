@@ -36,38 +36,38 @@ include ("database.class.php");
     return false;
   }
   //Geeter y Seeter
-  public function getyear () {
+ function getyear () {
     return $this -> year;
 }
-public function setyear ($year){
+ function setyear ($year){
     $this ->year=$year;
 }
 
-public function getdivision () {
+ function getdivision () {
     return $this -> division;
 }
-public function setdivision ($division){
+ function setdivision ($division){
     $this ->division=$division;
 }
 
-public function getcourse () {
+ function getcourse () {
     return $this -> course;
 }
-public function setcourse ($course){
+ function setcourse ($course){
     $this ->course=$course;
 }
 
-public function getsubjet () {
+ function getsubjet () {
     return $this -> subjet;
 }
-public function setsubjet ($subjet){
+ function setsubjet ($subjet){
     $this ->subjet=$subjet;
 }
 
-public function getshift () {
+ function getshift () {
     return $this -> shift;
 }
-public function setshift ($surshift){
+ function setshift ($surshift){
     $this ->shift=$surshift;
 }
 

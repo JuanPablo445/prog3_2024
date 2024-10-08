@@ -58,45 +58,45 @@ include ("database.class.php");
 }
     }
      //Geeter y Seeter
-     public function getstudent () {
+      function getstudent () {
         return $this -> student;
     }
-    public function setstudent ($student){
+     function setstudent ($student){
         $this ->student=$student;
     }
 
-    public function getcourse () {
+     function getcourse () {
         return $this -> course;
     }
-    public function setcourse ($course){
+     function setcourse ($course){
         $this ->course=$course;
     }
 
-    public function getdivision () {
+     function getdivision () {
         return $this -> division;
     }
-    public function setdivision ($division){
+     function setdivision ($division){
         $this ->division=$division;
     }
     
-    public function getteacher() {
+     function getteacher() {
         return $this -> teacher;
     }
-    public function setteacher ($teacher){
+     function setteacher ($teacher){
         $this ->teacher=$teacher;
     }
 
-    public function getassistantTeacher () {
+     function getassistantTeacher () {
         return $this -> assistantTeacher;
     }
-    public function setassistantTeacher ($assistantTeacher){
+     function setassistantTeacher ($assistantTeacher){
         $this ->assistantTeacher=$assistantTeacher;
     }
 
-    public function getdate () {
+     function getdate () {
         return $this -> date;
     }
-    public function setdate ($date){
+     function setdate ($date){
         $this ->date=$date;
     }
 
