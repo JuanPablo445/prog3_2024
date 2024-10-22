@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horarios</title>
     <link rel="stylesheet" href="css\timetable.css">
-</head>
-<body>
 
+</head>
+    
+<body>
+<?php include ("./header.footer/header.php"); ?>
 <?php
 if (!isset($_REQUEST["buscar"])) {
 ?>
